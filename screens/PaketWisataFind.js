@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class HajiUmrahFind extends Component {
+export default class PaketWisataFind extends Component {
   constructor(props) {
     super(props);
     // state = {
@@ -151,7 +151,7 @@ export default class HajiUmrahFind extends Component {
                 name='search'
                 style={{color : theme.colors.caption}} />
                 <Input 
-                placeholder='Cari Paket Haji atau Umrah'
+                placeholder='Cari Paket Wisata'
                 placeholderTextColor={theme.colors.caption} />
               </Item>
 
@@ -190,42 +190,82 @@ export default class HajiUmrahFind extends Component {
                 </View> 
             </View>
 
-            <Text style={styles.welcome}>Durasi</Text>
+          <Text style={styles.welcome}>Tujuan</Text>
           <Picker
-            selectedValue={this.state.lenghtday}
+            selectedValue={this.state.tujuan}
             style={{ height: height/10, width: width - theme.sizes.margin*2 }}
             onValueChange={(itemValue, itemIndex) =>
-              this.setState({ lenghtday: itemValue })
+              this.setState({ tujuan: itemValue })
             }
           >
             <Picker.Item label="All" value="All" />
-            <Picker.Item label="9 Hari" value="9 Hari" />
-            <Picker.Item label="13 Hari" value="13 Hari" />
-            <Picker.Item label="20 Hari" value="20 Hari" />
-            <Picker.Item label="Lebih dari 20 hari" value="Lebih dari 20 hari" />
+            <Picker.Item label="Domestik" value="Domestik" />
+            <Picker.Item label="Internasional" value="Internasional" />
           </Picker> 
 
           <Text style={styles.welcome}>
-            Keberangkatan
+            Negara
           </Text>
           <Picker
-            selectedValue={this.state.berangkat}
+            selectedValue={this.state.negara}
             style={{ height: height/10, width: width - theme.sizes.margin*2 }}
             onValueChange={(itemValue, itemIndex) =>
-              this.setState({ berangkat: itemValue })
+              this.setState({ negara: itemValue })
             }>
             <Picker.Item label="All" value="All" />
-            <Picker.Item label="Agustus 2019" value="Agustus 2019" />
-            <Picker.Item label="September 2019" value="September 2019" />
-            <Picker.Item label="Oktober 2019" value="Okbtober 2019" />
-            <Picker.Item label=" November 2019" value="November 2019" />
+            <Picker.Item label="Indonesia" value="Indonesia" />
+            <Picker.Item label="Malaysia" value="Malaysia" />
+            <Picker.Item label="Thailand" value="Thailand" />
+            <Picker.Item label="Vietnam" value="Vietnam" />
+          </Picker>
+
+          <Text style={styles.welcome}>
+            Kota
+          </Text>
+          <Picker
+            selectedValue={this.state.kota}
+            style={{ height: height/10, width: width - theme.sizes.margin*2 }}
+            onValueChange={(itemValue, itemIndex) =>
+              this.setState({ kota: itemValue })
+            }>
+            <Picker.Item label="All" value="All" />
+            <Picker.Item label="Bandung" value="Bandung" />
+            <Picker.Item label="Surabaya" value="Surabaya" />
+          </Picker>
+
+          <Text style={styles.welcome}>
+            Kategori
+          </Text>
+          <Picker
+            selectedValue={this.state.kategori}
+            style={{ height: height/10, width: width - theme.sizes.margin*2 }}
+            onValueChange={(itemValue, itemIndex) =>
+              this.setState({ kategori: itemValue })
+            }>
+            <Picker.Item label="All" value="All" />
+            <Picker.Item label="Wisata Alam - kuliner" value="Wisata Alam - kuliner" />
+            <Picker.Item label="Wisata Alam - pantai" value="Wisata Alam - pantai" />
+          </Picker>
+
+          <Text style={styles.welcome}>
+            Durasi
+          </Text>
+          <Picker
+            selectedValue={this.state.durasi}
+            style={{ height: height/10, width: width - theme.sizes.margin*2 }}
+            onValueChange={(itemValue, itemIndex) =>
+              this.setState({ durasi: itemValue })
+            }>
+            <Picker.Item label="All" value="All" />
+            <Picker.Item label="1 hari" value="1 hari" />
+            <Picker.Item label="Lebih dari 5 hari" value="Lebih dari 5 hari" />
           </Picker>
 
             <Button
               style={{marginVertical: (theme.sizes.margin * 0.5) - 5}}
               color= {values.colors.secondary}
               title="Cari Paket"
-              onPress={() => this.props.navigation.navigate('ListHaji')}
+              onPress={() => this.props.navigation.navigate('ListPaketWisata')}
             />
             </Card>
           </Content>

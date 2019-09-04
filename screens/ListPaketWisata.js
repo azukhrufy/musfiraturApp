@@ -22,90 +22,84 @@ import * as theme from '../theme';
 const { width, height } = Dimensions.get('window');
 const content = [
     {
-      id: 1,
-      title: 'Umrah 13 Hari Saudia',
-      user: {
-        name: 'Musfiratur',
-        avatar: '',
+        id: 1,
+        user: {
+          name: 'Musfiratur',
+          avatar: '',
+        },
+        saved: true,
+        location: 'Santorini, Greece',
+        temperature: 34,
+        title: 'Santorini',
+        description: 'Santorini - Description',
+        rating: 4.3,
+        reviews: 3212,
+        preview: 'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+        ]
       },
-      saved: true,
-      location: 'Langsung Surabaya - Madinah',
-      maskapai: 'Garuda Indonesia',
-      temperature: 34,
-      description: 'Paket 1 : Rp.21.000.000,- \nPaket 2 : Rp.30.000.000,-\nPaket 3 : Rp.45.000.000,-',
-      rating: 4.3,
-      reviews: 3212,
-      preview: 'https://images.unsplash.com/photo-1540871112484-09beaca00ec2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
-      images: [
-        'https://images.unsplash.com/photo-1540871112484-09beaca00ec2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      ]
-    },
-    {
-      id: 2,
-      title: 'Umrah 11 Hari Start Yogyakarta',
-      user: {
-        name: 'Lelia Chavez',
-        avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      {
+        id: 2,
+        user: {
+          name: 'Musfiratur',
+          avatar: '',
+        },
+        saved: false,
+        location: 'Loutraki, Greece',
+        temperature: 34,
+        title: 'Loutraki',
+        description: 'This attractive small town, 80 kilometers from Athens',
+        rating: 4.6,
+        reviews: 3212,
+        preview: 'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80',
+        ]
       },
-      saved: false,
-      location: 'Yogyakarta, Singapore, Jeddah',
-      temperature: 34,
-      description: 'This attractive small town, 80 kilometers from Athens',
-      rating: 4.6,
-      reviews: 3212,
-      preview: 'https://statik.tempo.co/data/2019/07/13/id_855148/855148_720.jpg',
-      images: [
-        'https://statik.tempo.co/data/2019/07/13/id_855148/855148_720.jpg',
-        'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80',
-      ]
-    },
-    {
-      id: 3,
-      title: 'Promo Umroh 9 Hari Singapore Airlines',
-      user: {
-        name: 'Lelia Chavez',
-        avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      {
+        id: 3,
+        user: {
+          name: 'Musfiratur',
+          avatar: '',
+        },
+        saved: true,
+        location: 'Santorini, Greece',
+        temperature: 34,
+        title: 'Santorini',
+        description: 'Santorini - Description',
+        rating: 3.2,
+        reviews: 3212,
+        preview: 'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
+        ]
       },
-      saved: true,
-      location: 'Surabaya, Singapore, Jeddah',
-      temperature: 34,
-      
-      description: 'Santorini - Description',
-      rating: 3.2,
-      reviews: 3212,
-      preview: 'http://www.siaranindonesia.com/data/uploads/2018/11/tursina-2.jpg',
-      images: [
-        'http://www.siaranindonesia.com/data/uploads/2018/11/tursina-2.jpg',
-        'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80',
-      ]
-    },
-    {
-      id: 4,
-      title: 'Paket Umrah Mufissatur 1',
-      user: {
-        name: 'Lelia Chavez',
-        avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      {
+        id: 4,
+        user: {
+          name: 'musfiratur',
+          avatar: '',
+        },
+        location: 'Loutraki, Greece',
+        temperature: 34,
+        title: 'Loutraki',
+        description: 'This attractive small town, 80 kilometers from Athens',
+        rating: 5,
+        reviews: 3212,
+        preview: 'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
+        images: [
+          'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80',
+        ]
       },
-      location: 'Jakarta,Singapore,Madinah',
-      temperature: 34,
-      
-      description: 'This attractive small town, 80 kilometers from Athens',
-      rating: 5,
-      reviews: 3212,
-      preview: 'https://i2.wp.com/www.umrahnews.com/wp-content/uploads/2019/03/jemaah-haji-maluku-e1557907395128.png?fit=597%2C400&ssl=1',
-      images: [
-        'https://i2.wp.com/www.umrahnews.com/wp-content/uploads/2019/03/jemaah-haji-maluku-e1557907395128.png?fit=597%2C400&ssl=1',
-        'https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80',
-        'https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80',
-      ]
-    },
   ];
 
   const styles = StyleSheet.create({
@@ -247,7 +241,7 @@ const content = [
     }
 });
 
-class ListHaji extends Component {
+class ListPaketWisata extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -345,8 +339,8 @@ style={[
   }
 }
 
-ListHaji.defaultProps = {
+ListPaketWisata.defaultProps = {
     destinations: content
   };
 
-export default ListHaji;
+export default ListPaketWisata;

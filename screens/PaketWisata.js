@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   }
 });
 
-class PaketHaji extends Component {
+class PaketWisata extends Component {
   scrollX = new Animated.Value(0);
 
   constructor(props) {
@@ -298,4 +298,4 @@ class PaketHaji extends Component {
   }
 }
 
-export default PaketHaji;
+export default PaketWisata;

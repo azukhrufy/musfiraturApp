@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
       paddingBottom: theme.sizes.padding * 0.36,
       justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: theme.sizes.margin,
+      // marginBottom: theme.sizes.margin,
     },
     HeaderLogo: {
       width: values.HeaderLogo.width,

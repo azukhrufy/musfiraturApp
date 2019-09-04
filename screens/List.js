@@ -9,6 +9,7 @@ import {
   Image,
   ImageBackground,
   Dimensions,
+  StatusBar,
   Platform,
   TouchableOpacity
 } from 'react-native';
@@ -24,14 +25,14 @@ const mocks = [
   {
     id: 1,
     user: {
-      name: 'Abu Tour',
-      avatar: 'https://2.bp.blogspot.com/-KLrNbSE1PVU/VzK-1D8qHsI/AAAAAAAAVWo/r3R9aIyuCpcL3DrU7uFZxhpgBR8fJSQPgCKgB/s1600/Logo%2BAbu%2Btour%2B2o.jpg',
+      name: 'Musfiratur',
+      avatar: '',
     },
     saved: true,
     location: 'Kaaba, Makkah',
     temperature: 34,
     title: 'Dapatkan Discount 30 %',
-    description: 'Dalam rangka ulang tahun Abu Tour yang ke 20 tahun, kali ini Abu Tour mengadakan promo besar - besaran dalam rangka merayakan ulangtahunnya kali ini.',
+    description: 'Dalam rangka ulang tahun Musfiratur yang ke 20 tahun, kali ini Musfiratur mengadakan promo besar - besaran dalam rangka merayakan ulangtahunnya kali ini.',
     rating: 4.3,
     reviews: 3212,
     preview: 'https://images.unsplash.com/photo-1540871112484-09beaca00ec2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80',
@@ -45,8 +46,8 @@ const mocks = [
   {
     id: 2,
     user: {
-      name: 'Lelia Chavez',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: 'Musfiratur',
+      avatar: '',
     },
     saved: false,
     location: 'Loutraki, Greece',
@@ -64,8 +65,8 @@ const mocks = [
   {
     id: 3,
     user: {
-      name: 'Lelia Chavez',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: 'Musfiratur',
+      avatar: '',
     },
     saved: true,
     location: 'Santorini, Greece',
@@ -85,8 +86,8 @@ const mocks = [
   {
     id: 4,
     user: {
-      name: 'Lelia Chavez',
-      avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
+      name: 'musfiratur',
+      avatar: '',
     },
     location: 'Loutraki, Greece',
     temperature: 34,
@@ -123,9 +124,12 @@ const styles = StyleSheet.create({
   articles: {
   },
   destinations: {
+    marginTop: theme.sizes.margin/4,
+    marginLeft: + (width/2),
+    marginRight: + (width/2),
     flex: 1,
     justifyContent: 'space-between',
-    paddingBottom: 30,
+    paddingBottom: 70,
   },
   destination: {
     width: width - (theme.sizes.padding * 2),
@@ -140,7 +144,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     borderRadius: theme.sizes.radius,
     paddingHorizontal: theme.sizes.padding,
-    paddingVertical: theme.sizes.padding / 2,
+    paddingVertical: theme.sizes.padding/2,
     bottom: 20,
     left: (width - (width - (theme.sizes.padding * 4))) / 2,
     backgroundColor: theme.colors.white,
@@ -223,56 +227,53 @@ const styles = StyleSheet.create({
     borderWidth: 2.5,
     borderRadius: 5,
     marginHorizontal: 6,
-    backgroundColor: theme.colors.gray,
+    backgroundColor: theme.colors.white,
     borderColor: 'transparent',
   },
   activeDot: {
-    width: 12.5,
+    width: 12.5 ,
     height: 12.5,
     borderRadius: 6.25,
-    borderColor: theme.colors.active,
+    borderColor: values.colors.secondary,
   },
   HeaderLogo: {
     width: values.HeaderLogo.width,
     height: values.HeaderLogo.height,
     overflow: 'visible',
-  }
+  },
+  oval: {
+    // marginTop: theme.sizes.padding * 0.66,
+    marginLeft: - (width/2),
+    marginRight: - (width/2),
+    height:  width,
+    borderBottomLeftRadius: width,
+    borderBottomRightRadius: width,
+    // borderRadius: width,
+    backgroundColor: values.colors.secondary,
+    marginBottom: theme.sizes.margin / 1.5,
+},
 });
 
 class Articles extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      // step 1 membuat auto scroll
+      sliderIndex: 0,
+      maxSlider: 3,
+    };
+  }
+
   static navigationOptions = {
     header: (
       <HeaderLogo />
     )
   }
   scrollX = new Animated.Value(0);
+  
 
-  renderDots() {
-    const { destinations } = this.props;
-    const dotPosition = Animated.divide(this.scrollX, width);
-    return (
-      <View
-style={[
-        styles.flex, styles.row,
-        { justifyContent: 'center', alignItems: 'center', marginTop: 10 }
-      ]}
-      >
-        {destinations.map((item, index) => {
-          const borderWidth = dotPosition.interpolate({
-            inputRange: [index - 1, index, index + 1],
-            outputRange: [0, 2.5, 0],
-            extrapolate: 'clamp'
-          });
-          return (
-            <Animated.View
-              key={`step-${item.id}`}
-              style={[styles.dots, styles.activeDot, { borderWidth }]}
-            />
-          );
-        })}
-      </View>
-    );
-  }
+  
 
   renderMenu = () => (
       <View>
@@ -312,16 +313,41 @@ style={[
 
             <TouchableOpacity activeOpacity={0.8} onPress={() =>  this.props.navigation.navigate('HajiUmrah')}> 
               <View style={[styles.column, styles.menuItem]}>
-                  <Image source={ require('../suitcase.png') } style={{ width: 30, height: 30, }} />
+                  <Image source={ require('../cruise.png') } style={{ width: 30, height: 30, }} />
                   <View style={[ styles.row, { justifyContent: 'space-between', alignItems: 'flex-end', paddingVertical: 8, }]}>
-                    <Text style={{ color: theme.colors.caption }} >Paket Wisata</Text>
+                    <Text style={{ color: theme.colors.caption }} >Tiket Kapal</Text>
                   </View>
               </View>
             </TouchableOpacity> 
             <View style={[styles.column, styles.menuItem]}>
-                  <Image source={ require('../suitcase.png') } style={{ width: 30, height: 30, }} />
+                  <Image source={ require('../train.png') } style={{ width: 30, height: 30, }} />
                   <View style={[ styles.row, { justifyContent: 'space-between', alignItems: 'flex-end', paddingVertical: 8, }]}>
-                    <Text style={{ color: theme.colors.caption }} >Paket Wisata</Text>
+                    <Text style={{ color: theme.colors.caption }} >Tiket Kereta</Text>
+                  </View>
+              </View>
+          </View>
+
+          <View style={[styles.column, styles.menuList]}>
+            <TouchableOpacity activeOpacity={0.8} onPress={() =>  this.props.navigation.navigate('PaketWisataFind')}>
+              <View style={[styles.column, styles.menuItem]}>
+                    <Image source={ require('../suitcase.png') } style={{ width: 30, height: 30, }} />
+                    <View style={[ styles.row, { justifyContent: 'space-between', alignItems: 'flex-end', paddingVertical: 8, }]}>
+                      <Text style={{ color: theme.colors.caption }} >Paket Wisata</Text>
+                    </View>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity activeOpacity={0.8} onPress={() =>  this.props.navigation.navigate('HajiUmrah')}> 
+              <View style={[styles.column, styles.menuItem]}>
+                  <Image source={ require('../bus.png') } style={{ width: 30, height: 30, }} />
+                  <View style={[ styles.row, { justifyContent: 'space-between', alignItems: 'flex-end', paddingVertical: 8, }]}>
+                    <Text style={{ color: theme.colors.caption }} >Tiket Travel</Text>
+                  </View>
+              </View>
+            </TouchableOpacity> 
+            <View style={[styles.column, styles.menuItem]}>
+                  <View style={{ width: 30, height: 30, }} />
+                  <View style={[ styles.row, { justifyContent: 'space-between', alignItems: 'flex-end', paddingVertical: 8, }]}>
                   </View>
               </View>
           </View>
@@ -345,26 +371,92 @@ style={[
     );
   }
 
+  //step 2 membuat auto scroll
+  setRef = (c) => {
+    this.listRef = c;
+  }
+
+  scrollToIndex = (index, animated) => {
+    this.listRef && this.listRef.scrollToIndex({ index, animated })
+  }
+
+  componentDidMount() {
+    setInterval(function() {
+      const { sliderIndex, maxSlider } = this.state
+      let nextIndex = 0
+
+      if (sliderIndex < maxSlider) {
+        nextIndex = sliderIndex + 1
+      }
+
+      this.scrollToIndex(nextIndex, true)
+      this.setState({sliderIndex: nextIndex})
+    }.bind(this), 3000)
+  }
+  // end of step 2
+
+
+  renderDots() {
+    const { destinations } = this.props;
+    const dotPosition = Animated.divide(this.scrollX, width);
+    return (
+      <View
+style={[
+        styles.flex, styles.row,
+        { justifyContent: 'center', alignItems: 'center', marginTop: 10 }
+      ]}
+      >
+        {destinations.map((item, index) => {
+          const borderWidth = dotPosition.interpolate({
+            inputRange: [index - 1, index, index + 1],
+            outputRange: [0, 2.5, 0],
+            extrapolate: 'clamp'
+          });
+          return (
+            <Animated.View
+              key={`step-${item.id}`}
+              style={[styles.dots, styles.activeDot, { borderWidth }]}
+            />
+          );
+        })}
+      </View>
+    );
+  }
+
   //render destinasi secara keseluruhan
   renderDestinations = () => (
       <View style={[styles.column, styles.destinations]}>
-        <FlatList
-          horizontal
-          pagingEnabled
-          scrollEnabled
-          showsHorizontalScrollIndicator={false}
-          decelerationRate={0}
-          scrollEventThrottle={16}
-          snapToAlignment="center"
-          style={{ overflow: 'visible', height: 280 }}
-          data={this.props.destinations}
-          keyExtractor={(item, index) => `${item.id}`}
-          onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: this.scrollX } } }])}
-          renderItem={({ item }) => this.renderDestination(item)}
-        />
-        {this.renderDots()}
+        
+          <FlatList
+            horizontal
+            pagingEnabled
+            scrollEnabled
+            showsHorizontalScrollIndicator={false}
+            decelerationRate={0}
+            scrollEventThrottle={16}
+            snapToAlignment="center"
+            style={{ overflow: 'visible', height: 280 }}
+            data={this.props.destinations}
+            keyExtractor={(item, index) => `${item.id}`}
+            onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: this.scrollX } } }])}
+            // step 3 auto scroll
+            ref={this.setRef}
+            onMomentumScrollEnd={(event) => {
+              let sliderIndex = event.nativeEvent.contentOffset.x ? event.nativeEvent.contentOffset.x/width : 0
+              this.setState({sliderIndex})
+            }}
+            //end of step 3
+            renderItem={({ item }) => this.renderDestination(item)}
+          />
+          
+          {this.renderDots()}
+       
       </View>
-    )
+  )
+
+  renderOval = () =>(
+    <View style={styles.oval}></View>
+  )
 
   // render destinasi per item
   renderDestination = item => {
@@ -490,14 +582,30 @@ style={[
 
   render() {
     return (
+      <View>
+      <StatusBar
+          barStyle="light-content"
+          // dark-content, light-content and default
+          hidden={false}
+          //To hide statusBar
+          backgroundColor={values.colors.secondary}
+          //Background color of statusBar
+          translucent={false}
+          //allowing light, but not detailed shapes
+          networkActivityIndicatorVisible={true}
+        />
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: theme.sizes.padding }}
       >
-        {this.renderDestinations()}
+        <View style={styles.oval}>
+          {this.renderDestinations()}
+        </View>
         {this.renderMenu()}
         {this.renderRecommended()}
       </ScrollView>
+      </View>
+      
     );
   }
 }

@@ -13,13 +13,16 @@ import Article from '../screens/Article';
 import Booking from '../screens/Booking';
 import History from '../screens/History';
 import HajiUmrahFind from '../screens/HajiUmrahFind';
+import PaketWisataFind from '../screens/PaketWisataFind';
 import OtherPayment from '../screens/OtherPayment';
 import Splash from '../screens/Splash';
 import values from '../values';
 import DetailHistory from '../screens/DetailHistory';
 import UserScreen from '../screens/UserScreen';
 import ListHaji from '../screens/ListHaji';
+import ListPaketWisata from '../screens/ListPaketWisata';
 import PaketHaji from '../screens/PaketHaji';
+import PaketWisata from '../screens/PaketWisata';
 import User from '../screens/User';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
@@ -30,14 +33,26 @@ const HajiUmrahNavigator = createStackNavigator({
   HajiUmrah: {
     screen: HajiUmrahFind,
   },
+  PaketWisataFind: {
+    screen: PaketWisataFind,
+  },
   ListHaji: {
     screen: ListHaji,
     navigationOptions: {
       headerTitle: 'Hasil Pencarian',
     },
   },
+  ListPaketWisata: {
+    screen: ListPaketWisata,
+    navigationOptions: {
+      headerTitle: 'Hasil Pencarian',
+    },
+  },
   PaketHaji: {
     screen: PaketHaji
+  },
+  PaketWisata: {
+    screen: PaketWisata
   },
   FormBookingHaji: {
     screen: FormBookingHaji
