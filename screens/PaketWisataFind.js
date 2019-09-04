@@ -138,12 +138,12 @@ export default class PaketWisataFind extends Component {
           //allowing light, but not detailed shapes
           networkActivityIndicatorVisible={true}
         />
-        <ScrollView
+      <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: theme.sizes.padding }}
       >
-       <Container style={styles.tema}>
-          <Content style={styles.wrapper} >
+        <View style={styles.tema}>
+          <View style={styles.wrapper} >
             <Card style={[styles.Cardwrapper, { borderRadius: 8 } ]}>
               <Item>
                 <Icon 
@@ -268,8 +268,8 @@ export default class PaketWisataFind extends Component {
               onPress={() => this.props.navigation.navigate('ListPaketWisata')}
             />
             </Card>
-          </Content>
-        </Container>
+          </View>
+        </View>
       </ScrollView>
       </View>
     );
