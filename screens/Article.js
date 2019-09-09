@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { Text, StyleSheet, View, Animated, Image, Dimensions, ScrollView, TouchableOpacity } from 'react-native'
 
+import { Container, Header, Tab, Tabs, ScrollableTab } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import * as theme from '../theme';
+import values from '../values';
 
 const { width, height } = Dimensions.get('window');
 
@@ -157,6 +159,9 @@ class Article extends Component {
     const article = navigation.getParam('article');
 
     return (
+      <ScrollView
+      showsVerticalScrollIndicator={false}
+      >
       <View style={styles.flex}>
         <View style={[styles.flex]}>
           <ScrollView
@@ -187,26 +192,52 @@ class Article extends Component {
             <Image style={[styles.avatar, styles.shadow]} source={{ uri: article.user.avatar }} />
             <Text style={styles.title}>{article.title}</Text>
             <View style={[
-              styles.row,
-              { alignItems: 'center', marginVertical: theme.sizes.margin / 2 }
-            ]}>
-              {this.renderRatings(article.rating)}
-              <Text style={{ color: theme.colors.active }}>
-                {article.rating} 
-              </Text>
-              <Text style={{ marginLeft: 8, color: theme.colors.caption }}>
-                 ({article.reviews} reviews)
-              </Text>
-            </View>
+                    styles.row,
+                    { alignItems: 'center', marginVertical: theme.sizes.margin / 2 }
+                  ]}>
+                    {this.renderRatings(article.rating)}
+                    <Text style={{ color: theme.colors.active }}>
+                      {article.rating} 
+                    </Text>
+                    <Text style={{ marginLeft: 8, color: theme.colors.caption }}>
+                      ({article.reviews} reviews)
+                    </Text>
+             </View>
+           
+            <Tabs 
+            tabBarBackgroundColor={'#ffffff'}
+            renderTabBar={()=> <ScrollableTab style={{ backgroundColor: "white" }} />}>
+                <Tab heading="Deskripsi">
+                  <Text style={styles.description}>
+                  {/* {article.description.split('').slice(0, 180)}... */}
+                  {article.description}
+                  {/* <Text style={{color: theme.colors.active}}> Read more</Text> */}
+                  </Text>
+                </Tab>
+                <Tab heading="Itinerary">
+                <Text style={styles.description}>
+                  {/* {article.description.split('').slice(0, 180)}... */}
+                  {article.itinerary}
+                  {/* <Text style={{color: theme.colors.active}}> Read more</Text> */}
+                  </Text>
+                </Tab>
+                <Tab heading="Tab3">
+                  {/* <Tab3 /> */}
+                </Tab>
+                <Tab heading="Tab4">
+                  {/* <Tab4 /> */}
+                </Tab>
+                <Tab heading="Tab5">
+                  {/* <Tab5 /> */}
+                </Tab>
+              </Tabs>
             <TouchableOpacity>
-              <Text style={styles.description}>
-                {article.description.split('').slice(0, 180)}...
-                <Text style={{color: theme.colors.active}}> Read more</Text>
-              </Text>
+              
             </TouchableOpacity>
           </View>
         </View>
       </View>
+      </ScrollView>
     )
   }
 }

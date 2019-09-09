@@ -27,14 +27,16 @@ import User from '../screens/User';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import FormBookingHaji from '../screens/FormBookingHaji';
+import listviewtest from '../screens/listviewtest';
+import HotelFind from '../screens/HotelFind';
 
 
 const HajiUmrahNavigator = createStackNavigator({
   HajiUmrah: {
     screen: HajiUmrahFind,
   },
-  PaketWisataFind: {
-    screen: PaketWisataFind,
+  listviewtest: {
+    screen: listviewtest,
   },
   ListHaji: {
     screen: ListHaji,
@@ -42,20 +44,32 @@ const HajiUmrahNavigator = createStackNavigator({
       headerTitle: 'Hasil Pencarian',
     },
   },
+  PaketHaji: {
+    screen: PaketHaji
+  },
+  FormBookingHaji: {
+    screen: FormBookingHaji
+  },
+});
+
+const PaketWisataNavigator = createStackNavigator({
+  PaketWisataFind: {
+    screen: PaketWisataFind,
+  },
   ListPaketWisata: {
     screen: ListPaketWisata,
     navigationOptions: {
       headerTitle: 'Hasil Pencarian',
     },
   },
-  PaketHaji: {
-    screen: PaketHaji
-  },
   PaketWisata: {
     screen: PaketWisata
-  },
-  FormBookingHaji: {
-    screen: FormBookingHaji
+  }
+});
+
+const HotelNavigator = createStackNavigator({
+  HotelFind: {
+    screen: HotelFind,
   },
 });
 
@@ -63,19 +77,6 @@ const UserNavigator = createStackNavigator({
   User: {
     screen: User,
   },
-  Register: {
-    screen: RegisterScreen,
-  },
-  Login: {
-    screen: LoginScreen,
-  },
-},
-{
-  initialRouteName: 'Register',
-  headerMode: 'none',
-  navigationOptions: {
-      headerVisible: false,
-  }
 });
 
 const HomeNavigator = createStackNavigator({
@@ -92,6 +93,23 @@ const HomeNavigator = createStackNavigator({
   // HistoryDetail: {
   //   screen: DetailHistory
   // }
+});
+
+const LoginRegisterNavigator = createSwitchNavigator({
+  Login: {
+    // screen: CobaScreen,
+    screen: LoginScreen,
+  },
+  Register: {
+    screen: RegisterScreen,
+  },
+},
+{
+  initialRouteName: 'Login',
+  headerMode: 'none',
+  navigationOptions: {
+      headerVisible: false,
+  }
 });
 
 // const DetailHistoryNavigator = createStackNavigator({
@@ -150,6 +168,8 @@ const MainApp = createStackNavigator({
     screen: MainTabs
   },
   HajiUmrahNavigator,
+  PaketWisataNavigator,
+  HotelNavigator,
   // Article
 },
 {
@@ -168,6 +188,7 @@ const SplashScreen = createSwitchNavigator({
 export default createStackNavigator(
     {
       SplashScreen,
+      LoginRegisterNavigator,
       // DetailHistoryNavigator,
     },
     {

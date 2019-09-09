@@ -13,11 +13,9 @@ const HistoryList = [
                 age: 3
             },
         ],
-        nama: 'John Doe',
         orderDate: '2019-03-03',
-        destination: 'Paket 1 Rp: 21.000.000/paket',
+        destination: 'Marrakesh',
         isCanceled: 'false',
-        status: 'Berhasil',
     },
     {
         id: 2,
@@ -28,11 +26,9 @@ const HistoryList = [
                 age: 25,
             },
         ],
-        nama: 'Jena Doe',
         orderDate: '2019-03-03',
-        destination: 'Paket 2 Rp: 21.000.000/paket',
+        destination: 'Hungary',
         isCanceled: 'true',
-        status: 'Gagal',
     },
 ];
 

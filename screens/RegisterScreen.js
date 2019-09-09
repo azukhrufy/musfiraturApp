@@ -1,110 +1,138 @@
 import React, { Component } from 'react';
-import { StyleSheet, TextInput, View, Image, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native';
+import { Item, Input, Button } from 'native-base';
 import values from '../values';
-// import { Button } from 'react-native-elements';
-// import AppStyles from '../AppStyles';
+import HeaderText from '../assets/HeaderText';
 
 class RegisterScreen extends Component {
+  static navigationOptions = {
+    header: (
+      <HeaderText HeaderText={'Daftar Menjadi Member'} />
+    )
+  }
+
     constructor(props) {
-		super(props);
-		this.state = {
-			UserName: '',
-			UserFullName: '',
-			UserEmail: '',
-			UserPassword: ''
-		};
+    super(props);
+    this.state = {
+      UserGroup: '1',
+      UserName: '',
+      UserFullName: '',
+      UserEmail: '',
+      UserPassword: '',
+      UserPhoneNumber: '',
+    };
     }
     
     UserRegistrationFunction = () => {
-		const { UserName } = this.state;
-		const { UserFullName } = this.state;
-		const { UserEmail } = this.state;
-		const { UserPassword } = this.state;
+      const { UserGroup } = this.state;
+      const { UserName } = this.state;
+      const { UserFullName } = this.state;
+      const { UserEmail } = this.state;
+      const { UserPassword } = this.state;
+      const { UserPhoneNumber } = this.state;
 
-		// fetch('http://192.168.43.252/react_native/user_registration.php', {
-		// 	method: 'JSON', // asalnya POST
-		// 	headers: {
-		// 		'Accept': 'application/json, text/plain, */*',
-		// 		'Content-Type': 'application/json',
-		// 	},
-		// 	body: JSON.stringify({            
-		// 		username: UserName,
-		// 		fullname: UserFullName,
-		// 		email: UserEmail,
-		// 		password: UserPassword
-		// 	})
-		// }).then((response) => response.text())
-		// .then((responseJson) => {
-		// 	// Showing response message coming from server after inserting records.
-		// 	Alert.alert(responseJson);
-		// }).catch((error) => {
-		// 	console.error(error);
-		// });
+      if (UserName === '' || UserFullName === '' || UserEmail === '' || UserPassword === '' ||
+        UserPhoneNumber === '') {
+          Alert.alert('Harap isi semua data yang diperlukan!');
+      }
+      else {
+        fetch('http://202.74.236.63/travellingqu/user_pengguna/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({     
+            idklpuserpengguna: UserGroup,    
+            nmuserpengguna: UserFullName,
+            username: UserName,
+            passwd: UserPassword,
+            email: UserEmail,
+            nohp: UserPhoneNumber
+          })
+        }).then((response) => response.text())
+        .then((responseJson) => {
+          // Showing response message coming from server after inserting records.
+          Alert.alert('notice: ' + responseJson);
+          // jika sukses langkah selanjutnya set session agar auto login setelah register
+        }).catch((error) => {
+          Alert.alert(`error: ${error}`);
+        });
+      }
     }
     
     render() {
-        return (
+        return ( 
           <View style={styles.wrapper}>
-            <View style={styles.title}>
+            <View style={styles.container} >
               <Image 
-                source={require('../assets/icon.png')} 
+                source={require('../assets/icon-long.png')} 
                 style={styles.img} 
                 resizeMode='contain'
               />
-            </View>
-            <View style={styles.container} >
-                <TextInput
-                    // Adding hint in Text Input using Place holder.
-                    placeholder="Enter UserName"
-                    onChangeText={UserName => this.setState({ UserName })}
-                    // Making the Under line Transparent.
-                    underlineColorAndroid='transparent'
-                    style={styles.TextInputStyleClass}
+              <Item rounded style={{ marginLeft: 10, marginRight: 10, }}>
+                <Input 
+                  placeholder='Enter Username' 
+                  onChangeText={UserName => this.setState({ UserName })}
                 />
-        
-                <TextInput
-                    // Adding hint in Text Input using Place holder.
-                    placeholder="Enter Full Name"
-                    onChangeText={UserFullName => this.setState({ UserFullName })}
-                    // Making the Under line Transparent.
-                    underlineColorAndroid='transparent'
-                    style={styles.TextInputStyleClass}
+              </Item>
+              <View style={styles.separator} />
+              <Item rounded style={{ marginLeft: 10, marginRight: 10, }}>
+                <Input 
+                  placeholder='Enter Full Name' 
+                  onChangeText={UserFullName => this.setState({ UserFullName })}
                 />
-        
-                <TextInput
-                    // Adding hint in Text Input using Place holder.
-                    placeholder="Enter User Email"
-                    onChangeText={UserEmail => this.setState({ UserEmail })}
-                    // Making the Under line Transparent.
-                    underlineColorAndroid='transparent'
-                    style={styles.TextInputStyleClass}
+              </Item>
+              <View style={styles.separator} />
+              <Item rounded style={{ marginLeft: 10, marginRight: 10, }}>
+                <Input 
+                  placeholder='Enter User Email' 
+                  onChangeText={UserEmail => this.setState({ UserEmail })}
                 />
-        
-                <TextInput
-                    // Adding hint in Text Input using Place holder.
-                    placeholder="Enter User Password"
-                    onChangeText={UserPassword => this.setState({ UserPassword })}
-                    // Making the Under line Transparent.
-                    underlineColorAndroid='transparent'
-                    style={styles.TextInputStyleClass}
-                    secureTextEntry={true}
+              </Item>
+              <View style={styles.separator} />
+              <Item rounded style={{ marginLeft: 10, marginRight: 10, }}>
+                <Input 
+                  placeholder='Enter User Password' 
+                  onChangeText={UserPassword => this.setState({ UserPassword })}
+                  secureTextEntry
                 />
+              </Item>
+              <View style={styles.separator} />
+              <Item rounded style={{ marginLeft: 10, marginRight: 10, }}>
+                <Input 
+                  placeholder='Enter Phone Number' 
+                  onChangeText={UserPhoneNumber => this.setState({ UserPhoneNumber })}
+                />
+              </Item>
+              <View style={styles.separator} />
+              <View style={styles.separator} />
+              <Button 
+                rounded block 
+                style={{ 
+                  backgroundColor: values.colors.secondary, 
+                  marginLeft: 10, 
+                  marginRight: 10 
+                }}
+                onPress={this.UserRegistrationFunction}
 
-                <Button
-                    type="solid"
-                    title="Register Now"
-                    buttonStyle={styles.buttonRegister}
-                    // containerStyle={styles.RegisterContainer}
-                    onPress={this.UserRegistrationFunction}
-                />
-                <View style={styles.separator} />
-                <Button
-                    // containerStyle={styles.buttonLogin}
-                    type="outline"
-                    title="Already Have an Account? Login"
-                    onPress={() => this.props.navigation.replace('Login')}
-                    buttonStyle={styles.buttonLogin}
-                />
+              >
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15 }}>Register</Text>
+              </Button>
+              <View style={styles.separator} />
+              <View style={styles.separator} />
+              <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
+                <Text>
+                  Sudah punya akun?&nbsp;
+                </Text>
+                <TouchableOpacity
+                  activeOpacity={0.5}
+                  onPress={() => this.props.navigation.navigate('Login')}
+                >
+                  <Text style={{ fontWeight: 'bold', color: values.colors.primary }}>
+                    Login Sekarang
+                  </Text>
+                </TouchableOpacity>
+              </View>
             </View> 
           </View>
         );
@@ -127,13 +155,14 @@ const styles = StyleSheet.create({
   img: {
     width: values.DeviceWidth * 0.8,
     // height: 100,
+    alignSelf: 'center',
   },
     container: {
         flex: 1,
         // alignItems: 'center',
         alignItems: 'stretch',
         flexDirection: 'column',
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
         paddingBottom: 10,
     },
     buttonRegister: {
@@ -154,20 +183,20 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 10
     },
-	TextInputStyleClass: {
-		textAlign: 'center',
-		marginBottom: 7,
-		height: 40,
-		borderWidth: 1,
-		// Set border Hex Color Code Here.
-		borderColor: '#2196F3',
-		
-		// Set border Radius.
-		borderRadius: 5,
-		
-		// Set border Radius.
-		//borderRadius: 10 ,
-	},
+  TextInputStyleClass: {
+    textAlign: 'center',
+    marginBottom: 7,
+    height: 40,
+    borderWidth: 1,
+    // Set border Hex Color Code Here.
+    borderColor: '#2196F3',
+    
+    // Set border Radius.
+    borderRadius: 5,
+    
+    // Set border Radius.
+    //borderRadius: 10 ,
+  },
   separator: {
     height: 7
   }

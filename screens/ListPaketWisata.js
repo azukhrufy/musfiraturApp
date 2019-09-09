@@ -306,8 +306,7 @@ class ListPaketWisata extends Component {
                 />
                 <Text> {item.location}</Text>
               </Text>
-              <View
-style={[
+              <View style={[
               styles.row,
               { alignItems: 'center', marginVertical: theme.sizes.margin / 2 }
             ]}>

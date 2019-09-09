@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, TextInput, View, Text, Button, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Item, Input, Button } from 'native-base';
+
 import values from '../values';
 // import { Button } from 'react-native-elements';
 // import AppStyles from '../AppStyles';
+
 
 class LoginScreen extends Component {
     constructor(props) {
@@ -16,10 +19,10 @@ class LoginScreen extends Component {
     }
     
     UserRegistrationFunction = () => {
-		const { UserName } = this.state;
-		const { UserFullName } = this.state;
-		const { UserEmail } = this.state;
-		const { UserPassword } = this.state;
+      const { UserName } = this.state;
+      const { UserFullName } = this.state;
+      const { UserEmail } = this.state;
+      const { UserPassword } = this.state;
 
 		// fetch('http://192.168.43.252/react_native/user_registration.php', {
 		// 	method: 'JSON', // asalnya POST
@@ -45,49 +48,54 @@ class LoginScreen extends Component {
     render() {
         return (
           <View style={styles.wrapper}>
-            <View style={styles.title}>
+            <View style={styles.container} >
               <Image 
-                source={require('../assets/icon.png')} 
+                source={require('../assets/icon-long.png')} 
                 style={styles.img} 
                 resizeMode='contain'
               />
-            </View>
-            <View style={styles.container} >
-              <Text>Login First</Text>
-                <TextInput
-                    // Adding hint in Text Input using Place holder.
-                    placeholder="Enter UserName"
-                    onChangeText={UserName => this.setState({ UserName })}
-                    // Making the Under line Transparent.
-                    underlineColorAndroid='transparent'
-                    style={styles.TextInputStyleClass}
+              <Item rounded style={{ marginLeft: 10, marginRight: 10, }}>
+                <Input 
+                  placeholder='Enter Username' 
+                  onChangeText={UserName => this.setState({ UserName })}
                 />
-        
-                <TextInput
-                    // Adding hint in Text Input using Place holder.
-                    placeholder="Enter User Password"
-                    onChangeText={UserPassword => this.setState({ UserPassword })}
-                    // Making the Under line Transparent.
-                    underlineColorAndroid='transparent'
-                    style={styles.TextInputStyleClass}
-                    secureTextEntry={true}
+              </Item>
+              <View style={styles.separator} />
+              <Item rounded style={{ marginLeft: 10, marginRight: 10, }}>
+                <Input 
+                  placeholder='Enter Password' 
+                  onChangeText={UserPassword => this.setState({ UserPassword })}
+                  secureTextEntry
                 />
-
-                <Button
-                    type="solid"
-                    title="Login"
-                    buttonStyle={styles.buttonRegister}
-                    // containerStyle={styles.RegisterContainer}
-                    onPress={this.UserRegistrationFunction}
-                />
-                <View style={styles.separator} />
-                <Button
-                    // containerStyle={styles.buttonLogin}
-                    type="outline"
-                    title="Don't Have an Account? Register"
-                    onPress={() => this.props.navigation.replace('Register')}
-                    buttonStyle={styles.buttonLogin}
-                />
+              </Item>
+              <View style={styles.separator} />
+              <View style={styles.separator} />
+              <Button 
+                rounded block 
+                style={{ 
+                  backgroundColor: values.colors.secondary, 
+                  marginLeft: 10, 
+                  marginRight: 10 
+                }}
+              >
+                <Text style={{ color: 'white', fontWeight: 'bold', fontSize: 15 }}>Login</Text>
+              </Button>
+              <View style={styles.separator} />
+              <View style={styles.separator} />
+              <View style={{ flex: 0, flexDirection: 'row', justifyContent: 'center' }}>
+                <Text>
+                  Belum punya akun?&nbsp;
+                </Text>
+                <TouchableOpacity
+                  activeOpacity={0.5}
+                  onPress={() => this.props.navigation.navigate('Register')}
+                >
+                  <Text style={{ fontWeight: 'bold', color: values.colors.primary }}>
+                    Register Sekarang
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              
             </View> 
           </View>
         );
@@ -110,13 +118,14 @@ const styles = StyleSheet.create({
   img: {
     width: values.DeviceWidth * 0.8,
     // height: 100,
+    alignSelf: 'center',
   },
     container: {
         flex: 1,
         // alignItems: 'center',
         alignItems: 'stretch',
         flexDirection: 'column',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         paddingBottom: 10,
     },
     buttonRegister: {
@@ -154,6 +163,15 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 7
+  },
+  text: {
+    top: 0,
+    left: 0,
+    color: '#121212',
+    position: 'absolute',
+    fontSize: 28,
+    fontStyle: 'normal',
+    textAlign: 'center'
   }
 });
 

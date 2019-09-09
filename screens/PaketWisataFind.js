@@ -105,8 +105,6 @@ const styles = StyleSheet.create({
 export default class PaketWisataFind extends Component {
   constructor(props) {
     super(props);
-    // state = {
-    // },
     this.state = { 
       seacrh: '',
       minval: 12000000, 
