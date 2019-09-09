@@ -12,6 +12,7 @@ const values = {
         primary: '#0d9540',
         secondary: '#76b041',
         inactiveBar: '#8c969c',
+        gray: '#DCE0E9',
     }
 };
 
