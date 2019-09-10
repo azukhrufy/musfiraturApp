@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { Text, StyleSheet, View, Animated, Image, Dimensions, ScrollView, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, View, Animated, Image, Dimensions, ScrollView, TouchableOpacity, Button } from 'react-native'
 
 import { Container, Header, Tab, Tabs, ScrollableTab } from 'native-base';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
+import NumericInput from 'react-native-numeric-input';
+import NumberFormat from 'react-number-format';
 import * as theme from '../theme';
 import values from '../values';
 
@@ -95,6 +97,22 @@ const styles = StyleSheet.create({
 
 class Article extends Component {
   scrollX = new Animated.Value(0);
+
+  constructor(props) {
+    super(props);
+    // state = {
+    // },
+    this.state = { 
+      value: 1,
+      value2 : 1,
+      Price: 21000000,
+      Price2: 24000000, 
+    };
+  }
+
+  getVal(val) {
+    return (val);
+  }
 
   static navigationOptions = ({ navigation }) => {
     return {
@@ -205,8 +223,8 @@ class Article extends Component {
              </View>
            
             <Tabs 
-            tabBarBackgroundColor={'#ffffff'}
-            renderTabBar={()=> <ScrollableTab style={{ backgroundColor: "white" }} />}>
+            
+            renderTabBar={()=> <ScrollableTab />}>
                 <Tab heading="Deskripsi">
                   <Text style={styles.description}>
                   {/* {article.description.split('').slice(0, 180)}... */}
@@ -221,14 +239,63 @@ class Article extends Component {
                   {/* <Text style={{color: theme.colors.active}}> Read more</Text> */}
                   </Text>
                 </Tab>
-                <Tab heading="Tab3">
-                  {/* <Tab3 /> */}
-                </Tab>
-                <Tab heading="Tab4">
-                  {/* <Tab4 /> */}
-                </Tab>
-                <Tab heading="Tab5">
-                  {/* <Tab5 /> */}
+                <Tab heading="Pesan Paket">
+            <View style={{margin: theme.sizes.margin/2.5, flexDirection : 'row', justifyContent: 'space-between' }}>
+              <Text style={[styles.description,{ color: theme.colors.black} ]}>
+                Paket 1 
+              </Text>
+              <View style={{marginLeft: theme.sizes.margin/2.5}}>
+                <NumericInput  
+                  type='plus-minus'
+                  value={this.state.value}
+                  Price = {this.state.Price}
+                  totalWidth={width/4} 
+                  totalHeight={height/15} 
+                  iconSize={theme.sizes.title}
+                  onChange={value => this.setState({value})} /> 
+              </View>
+              <Text style={[styles.description,{ marginLeft: theme.sizes.margin/2.5, color: theme.colors.black} ]}>
+                <NumberFormat value={this.state.value*21000000} displayType={'text'} thousandSeparator={true}  renderText={value => <Text>{value}</Text>} prefix={'Rp.'} />
+              </Text>
+            </View>
+            <Button
+              style={{margin: theme.sizes.margin/2, width : width - (theme.sizes.padding), height: width * 0.6}}
+              title="Booking Paket 1"
+              onPress={() => this.props.navigation.navigate('FormBookingHaji')}
+              style={{marginTop: theme.sizes.margin/2}}
+            />
+             <View style={{margin: theme.sizes.margin/2.5, flexDirection : 'row', justifyContent: 'space-between' }}>
+              <Text style={[styles.description,{ color: theme.colors.black} ]}>
+                Paket 2 
+              </Text>
+              <View style={{marginLeft: theme.sizes.margin/2.5}}>
+                <NumericInput  
+                  type='plus-minus'
+                  value2={this.state.value2}
+                  Price2 = {this.state.Price2}
+                  totalWidth={width/4} 
+                  totalHeight={height/15} 
+                  iconSize={theme.sizes.title}
+                  onChange={value2 => this.setState({value2})} /> 
+              </View>
+              <Text style={[styles.description,{ marginLeft: theme.sizes.margin/2.5, color: theme.colors.black} ]}>
+              <NumberFormat value={this.state.value2*30000000} displayType={'text'} thousandSeparator={true}  renderText={value => <Text>{value}</Text>} prefix={'Rp.'} />
+              </Text>
+            </View>
+            <Button
+              style={{margin: theme.sizes.margin/2, width : width - (theme.sizes.padding), height: width * 0.6}}
+              title="Booking Paket 2"
+              onPress={() => this.props.navigation.navigate('FormBookingHaji')}
+              style={{marginTop: theme.sizes.margin/2}}
+            />
+            <View style={{marginTop: theme.sizes.margin, flexDirection : 'row' }}>
+              <Text style={[styles.description,{ color: theme.colors.caption} ]}>
+                Paket 3 
+              </Text>
+              <Text style={[styles.description,{ marginLeft: theme.sizes.margin, color: theme.colors.caption} ]}>
+                (Paket Kosong)
+              </Text>
+            </View>
                 </Tab>
               </Tabs>
             <TouchableOpacity>

@@ -36,9 +36,9 @@ const mocks = [
     itinerary: '\nDay 1 - Istanbul - Full Day Tour / Overnight\n\nTiba di Istanbul Airport - Check In Imigrasi. Peserta memulai perjalanan Tour mengunjungi Masjid Suleymaniye Mosque, kemudian makan siang di Restauran Lokal Turki. Dilanjutkan perjalanan ke Topkapi Palace. Kemudian makan malam di Restaurant lokal dilanjutkan melihat keindahan malam kota Istambul.\n\n\nDay 2 - Full Day Istanbul\n\nSetelah sarapan pagi di hotel. Peserta mengunjungi Blue Mosque dilanjutkan ke Hippodrome dan Ayasofia Museum. Peserta kemudian dibawa mengunjungi Pasar Tradisional Turki / Mall untuk shopping di Grand Bazaar. Terakhir makan malam di restauran. Istirahat',
     rating: 4.3,
     reviews: 3212,
-    preview: 'https://i.ibb.co/W27crn0/Screenshot-2019-09-06-14-05-04-15.png',
+    preview: 'https://i.ibb.co/wKg3xnv/crop-2.png',
     images: [
-      'https://i.ibb.co/W27crn0/Screenshot-2019-09-06-14-05-04-15.png',
+      'https://i.ibb.co/wKg3xnv/crop-2.png',
       'https://i.ibb.co/6RyBvLn/Screenshot-2019-09-06-14-07-03-66.png',
     ]
   },
@@ -56,9 +56,9 @@ const mocks = [
     itinerary: '\nDay 1 - Istanbul - Full Day Tour / Overnight\n\nTiba di Istanbul Airport - Check In Imigrasi. Peserta memulai perjalanan Tour mengunjungi Masjid Suleymaniye Mosque, kemudian makan siang di Restauran Lokal Turki. Dilanjutkan perjalanan ke Topkapi Palace. Kemudian makan malam di Restaurant lokal dilanjutkan melihat keindahan malam kota Istambul.\n\n\nDay 2 - Full Day Istanbul\n\nSetelah sarapan pagi di hotel. Peserta mengunjungi Blue Mosque dilanjutkan ke Hippodrome dan Ayasofia Museum. Peserta kemudian dibawa mengunjungi Pasar Tradisional Turki / Mall untuk shopping di Grand Bazaar. Terakhir makan malam di restauran. Istirahat',
     rating: 4.6,
     reviews: 3212,
-    preview: 'https://i.ibb.co/pvBrVN0/Screenshot-2019-09-06-14-02-48-60.png',
+    preview: 'https://i.ibb.co/MDSYGn9/crop-1.png',
     images: [
-      'https://i.ibb.co/pvBrVN0/Screenshot-2019-09-06-14-02-48-60.png',
+      'https://i.ibb.co/MDSYGn9/crop-1.png',
       'https://i.ibb.co/qNVrLDp/Screenshot-2019-09-06-14-03-15-16.png',
     ]
   },
@@ -264,6 +264,7 @@ class Articles extends Component {
       // step 1 membuat auto scroll
       sliderIndex: 0,
       maxSlider: 3,
+      dataSource: [], loading: true
     };
   }
 
@@ -274,8 +275,20 @@ class Articles extends Component {
   }
   scrollX = new Animated.Value(0);
   
-
-  
+   //step 2
+   componentDidMount() {
+ 
+    fetch('https://my-json-server.typicode.com/azukhrufy/listpaketwisata/listads')
+    .then((response) => response.json())
+    .then((responseJson) =>
+    {
+        this.setState({ dataSource:  responseJson }, () => { this.setState({ loading: false }) });
+    })
+    .catch((error) =>
+    {
+        console.error(error);
+    });
+  }
 
   renderMenu = () => (
       <View>
@@ -315,7 +328,7 @@ class Articles extends Component {
               </View>
             </TouchableOpacity>
 
-            <TouchableOpacity activeOpacity={0.8} onPress={() =>  this.props.navigation.navigate('listviewtest')}> 
+            <TouchableOpacity activeOpacity={0.8} onPress={() =>  this.props.navigation.navigate('testListFromServer')}> 
               <View style={[styles.column, styles.menuItem]}>
                   <Image source={ require('../cruise.png') } style={{ width: 30, height: 30, }} />
                   <View style={[ styles.row, { justifyContent: 'space-between', alignItems: 'flex-end', paddingVertical: 8, }]}>

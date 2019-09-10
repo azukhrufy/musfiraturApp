@@ -168,7 +168,7 @@ class ListHaji extends Component {
   //step 2
   componentDidMount() {
  
-    fetch('https://my-json-server.typicode.com/azukhrufy/listpaketwisata/listpaketwisata')
+    fetch('https://my-json-server.typicode.com/azukhrufy/listpaketwisata/listhaji')
     .then((response) => response.json())
     .then((responseJson) =>
     {

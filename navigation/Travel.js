@@ -27,16 +27,16 @@ import User from '../screens/User';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import FormBookingHaji from '../screens/FormBookingHaji';
-import listviewtest from '../screens/listviewtest';
 import HotelFind from '../screens/HotelFind';
+import testListFromServer from '../screens/testListFromServer';
 
 
 const HajiUmrahNavigator = createStackNavigator({
   HajiUmrah: {
     screen: HajiUmrahFind,
   },
-  listviewtest: {
-    screen: listviewtest,
+  testListFromServer:{
+    screen: testListFromServer
   },
   ListHaji: {
     screen: ListHaji,

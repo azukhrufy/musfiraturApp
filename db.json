@@ -1,86 +1,81 @@
 {
-"listpaketwisata":[
+"listhaji":[
     {
-    "id": 1,
-    "user": {
-        "name": "Musfiratur",
-        "avatar": ""
-    },
-    "saved": true,
-    "location": "Santorini, Greece",
-    "temperature": 34,
-    "title": "Santorini",
-    "description": "Santorini - Description",
-    "rating": 4.3,
-    "reviews": 3212,
-    "preview": "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-    "images": [
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80"
-    ]
-  },
-  {
-    "id": 2,
-    "user": {
-        "name": "Musfiratur",
-        "avatar": ""
-    },
-    "saved": false,
-    "location": "Loutraki, Greece",
-    "temperature": 34,
-    "title": "Loutraki",
-    "description": "This attractive small town, 80 kilometers from Athens",
-    "rating": 4.6,
-    "reviews": 3212,
-    "preview": "https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80",
-    "images": [
-        "https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80"
-       
-    ]
-  },
-  {
-    "id": 3,
-    "user": {
-        "name": "Musfiratur",
-        "avatar": ""
-    },
-    "saved": true,
-    "location": "Santorini, Greece",
-    "temperature": 34,
-    "title": "Santorini",
-    "description": "Santorini - Description",
-    "rating": 4.3,
-    "reviews": 3212,
-    "preview": "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-    "images": [
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1507501336603-6e31db2be093?auto=format&fit=crop&w=800&q=80"
-    ]
-  },
-  {
-    "id": 4,
-    "user": {
-        "name": "Musfiratur",
-        "avatar": ""
-    },
-    "saved": false,
-    "location": "Loutraki, Greece",
-    "temperature": 34,
-    "title": "Loutraki",
-    "description": "This attractive small town, 80 kilometers from Athens",
-    "rating": 4.6,
-    "reviews": 3212,
-    "preview": "https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80",
-    "images": [
-        "https://images.unsplash.com/photo-1458906931852-47d88574a008?auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1446903572544-8888a0e60687?auto=format&fit=crop&w=800&q=80"
-       
-    ]
-  }
+        "id": 1,
+        "user": {
+            "name": "Musfiratur",
+            "avatar": ""
+        },
+        "saved": true,
+        "location": "Saudi Arabia, Oman",
+        "temperature": 34,
+        "title": "Umroh plus Oman City Tour",
+        "description": "\nMulai dari Rp. 21 Jt anda bisa menikmati paket umrah plus wisata di oman dari musfiratur.\n\nCiti Tour setengah hari di Oman Pagi hari berkumpul di hotel untuk memulai Citi Tour. Tour dimulai dgn mengunjungi Masjid Sultan Qaboos, yg merupakan salah satu masjid terbesar di Timur Tengah.\nDilanjutkan mengunjungi Museum National History utk mengetahui sejarah Oman dan kekayaan budayanya.\nTerakhir menuju Corniche di distrik Muscat\nAnda dapat berhenti sejenak untuk berfoto di Istana Sultan Qaboos, yang diapit oleh pelabuhan Portugis abad ke-16 Mirani dan Jalali. Anda dapat berjalan-jalan disekitar Muttrah Souq, di mana anda dapat membeli cinderamata khas Oman.",
+        "itinerary": "\nDay 1 - Istanbul - Full Day Tour / Overnight\n\nTiba di Istanbul Airport - Check In Imigrasi. Peserta memulai perjalanan Tour mengunjungi Masjid Suleymaniye Mosque, kemudian makan siang di Restauran Lokal Turki. Dilanjutkan perjalanan ke Topkapi Palace. Kemudian makan malam di Restaurant lokal dilanjutkan melihat keindahan malam kota Istambul.\n\n\nDay 2 - Full Day Istanbul\n\nSetelah sarapan pagi di hotel. Peserta mengunjungi Blue Mosque dilanjutkan ke Hippodrome dan Ayasofia Museum. Peserta kemudian dibawa mengunjungi Pasar Tradisional Turki / Mall untuk shopping di Grand Bazaar. Terakhir makan malam di restauran. Istirahat",
+        "rating": 4.3,
+        "reviews": 3212,
+        "preview": "https://i.ibb.co/W27crn0/Screenshot-2019-09-06-14-05-04-15.png",
+        "images": [
+            "https://i.ibb.co/W27crn0/Screenshot-2019-09-06-14-05-04-15.png",
+            "https://i.ibb.co/6RyBvLn/Screenshot-2019-09-06-14-07-03-66.png"
+        ]
+      },{
+        "id": 2,
+        "user": {
+            "name": "Musfiratur",
+            "avatar": ""
+        },
+        "saved": true,
+        "location": "Saudi Arabia, Turki",
+        "temperature": 34,
+        "title": "Umrah Plus Turki",
+        "description": "\nMulai dari Rp. 32 Jt, dapatkan Paket Umrah Plus tour Turki Hotel Berbintang 4\n\nHarga sudah termasuk :\n1. Tiket pesawat Economy Class pp.\n2. Hotel *4 di Turki (2N), Madinah *3 (4D/3N) Mekkah *4 (5D/4N)\n3. Visa Turki & Visa Umroh\n4. City Tour Istambul\n5. Object Tour sesuai Paket\n\nHarga belum termasuk :\n1. Tips Tour Guide dan Supir selama di Turki\n2. Biaya perlengkapan Koper dll + Handling Jakarta dan kelebihan bagasi ditanggung jamaah\n3. Akomodasi pesawat dari daerah ke Jakarta",
+        "itinerary": "\nDay 1 - Istanbul - Full Day Tour / Overnight\n\nTiba di Istanbul Airport - Check In Imigrasi. Peserta memulai perjalanan Tour mengunjungi Masjid Suleymaniye Mosque, kemudian makan siang di Restauran Lokal Turki. Dilanjutkan perjalanan ke Topkapi Palace. Kemudian makan malam di Restaurant lokal dilanjutkan melihat keindahan malam kota Istambul.\n\n\nDay 2 - Full Day Istanbul\n\nSetelah sarapan pagi di hotel. Peserta mengunjungi Blue Mosque dilanjutkan ke Hippodrome dan Ayasofia Museum. Peserta kemudian dibawa mengunjungi Pasar Tradisional Turki / Mall untuk shopping di Grand Bazaar. Terakhir makan malam di restauran. Istirahat",
+        "rating": 4.3,
+        "reviews": 3212,
+        "preview": "https://i.ibb.co/pvBrVN0/Screenshot-2019-09-06-14-02-48-60.png",
+        "images": [
+            "https://i.ibb.co/pvBrVN0/Screenshot-2019-09-06-14-02-48-60.png",
+            "https://i.ibb.co/qNVrLDp/Screenshot-2019-09-06-14-03-15-16.png"
+        ]
+      },{
+        "id": 3,
+        "user": {
+            "name": "Musfiratur",
+            "avatar": ""
+        },
+        "saved": true,
+        "location": "Saudi Arabia, Oman",
+        "temperature": 34,
+        "title": "Umroh plus Oman City Tour",
+        "description": "\nMulai dari Rp. 21 Jt anda bisa menikmati paket umrah plus wisata di oman dari musfiratur.\n\nCiti Tour setengah hari di Oman Pagi hari berkumpul di hotel untuk memulai Citi Tour. Tour dimulai dgn mengunjungi Masjid Sultan Qaboos, yg merupakan salah satu masjid terbesar di Timur Tengah.\nDilanjutkan mengunjungi Museum National History utk mengetahui sejarah Oman dan kekayaan budayanya.\nTerakhir menuju Corniche di distrik Muscat\nAnda dapat berhenti sejenak untuk berfoto di Istana Sultan Qaboos, yang diapit oleh pelabuhan Portugis abad ke-16 Mirani dan Jalali. Anda dapat berjalan-jalan disekitar Muttrah Souq, di mana anda dapat membeli cinderamata khas Oman.",
+        "itinerary": "\nDay 1 - Istanbul - Full Day Tour / Overnight\n\nTiba di Istanbul Airport - Check In Imigrasi. Peserta memulai perjalanan Tour mengunjungi Masjid Suleymaniye Mosque, kemudian makan siang di Restauran Lokal Turki. Dilanjutkan perjalanan ke Topkapi Palace. Kemudian makan malam di Restaurant lokal dilanjutkan melihat keindahan malam kota Istambul.\n\n\nDay 2 - Full Day Istanbul\n\nSetelah sarapan pagi di hotel. Peserta mengunjungi Blue Mosque dilanjutkan ke Hippodrome dan Ayasofia Museum. Peserta kemudian dibawa mengunjungi Pasar Tradisional Turki / Mall untuk shopping di Grand Bazaar. Terakhir makan malam di restauran. Istirahat",
+        "rating": 4.3,
+        "reviews": 3212,
+        "preview": "https://i.ibb.co/W27crn0/Screenshot-2019-09-06-14-05-04-15.png",
+        "images": [
+            "https://i.ibb.co/W27crn0/Screenshot-2019-09-06-14-05-04-15.png",
+            "https://i.ibb.co/6RyBvLn/Screenshot-2019-09-06-14-07-03-66.png"
+        ]
+      },{
+        "id": 4,
+        "user": {
+            "name": "Musfiratur",
+            "avatar": ""
+        },
+        "saved": true,
+        "location": "Saudi Arabia, Turki",
+        "temperature": 34,
+        "title": "Umrah Plus Turki",
+        "description": "\nMulai dari Rp. 32 Jt, dapatkan Paket Umrah Plus tour Turki Hotel Berbintang 4\n\nHarga sudah termasuk :\n1. Tiket pesawat Economy Class pp.\n2. Hotel *4 di Turki (2N), Madinah *3 (4D/3N) Mekkah *4 (5D/4N)\n3. Visa Turki & Visa Umroh\n4. City Tour Istambul\n5. Object Tour sesuai Paket\n\nHarga belum termasuk :\n1. Tips Tour Guide dan Supir selama di Turki\n2. Biaya perlengkapan Koper dll + Handling Jakarta dan kelebihan bagasi ditanggung jamaah\n3. Akomodasi pesawat dari daerah ke Jakarta",
+        "itinerary": "\nDay 1 - Istanbul - Full Day Tour / Overnight\n\nTiba di Istanbul Airport - Check In Imigrasi. Peserta memulai perjalanan Tour mengunjungi Masjid Suleymaniye Mosque, kemudian makan siang di Restauran Lokal Turki. Dilanjutkan perjalanan ke Topkapi Palace. Kemudian makan malam di Restaurant lokal dilanjutkan melihat keindahan malam kota Istambul.\n\n\nDay 2 - Full Day Istanbul\n\nSetelah sarapan pagi di hotel. Peserta mengunjungi Blue Mosque dilanjutkan ke Hippodrome dan Ayasofia Museum. Peserta kemudian dibawa mengunjungi Pasar Tradisional Turki / Mall untuk shopping di Grand Bazaar. Terakhir makan malam di restauran. Istirahat",
+        "rating": 4.3,
+        "reviews": 3212,
+        "preview": "https://i.ibb.co/pvBrVN0/Screenshot-2019-09-06-14-02-48-60.png",
+        "images": [
+            "https://i.ibb.co/pvBrVN0/Screenshot-2019-09-06-14-02-48-60.png",
+            "https://i.ibb.co/qNVrLDp/Screenshot-2019-09-06-14-03-15-16.png"
+        ]
+      }
 ]
 }

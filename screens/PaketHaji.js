@@ -3,7 +3,8 @@ import { Text, StyleSheet, View, Animated, Image, Dimensions, ScrollView, Toucha
 
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import NumericInput from 'react-native-numeric-input'
+import NumericInput from 'react-native-numeric-input';
+import { Container, Header, Tab, Tabs, ScrollableTab } from 'native-base';
 
 import * as theme from '../theme';
 import NumberFormat from 'react-number-format';
@@ -185,8 +186,8 @@ class PaketHaji extends Component {
 
     return (
       <ScrollView
-        showsVerticalScrollIndicator={false}
-        >
+      showsVerticalScrollIndicator={false}
+      >
       <View style={styles.flex}>
         <View style={[styles.flex]}>
           <ScrollView
@@ -217,28 +218,41 @@ class PaketHaji extends Component {
             <Image style={[styles.avatar, styles.shadow]} source={{ uri: article.user.avatar }} />
             <Text style={styles.title}>{article.title}</Text>
             <View style={[
-              styles.row,
-              { alignItems: 'center', marginVertical: theme.sizes.margin / 2 }
-            ]}>
-              {this.renderRatings(article.rating)}
-              <Text style={{ color: theme.colors.active }}>
-                {article.rating} 
-              </Text>
-              <Text style={{ marginLeft: 8, color: theme.colors.caption }}>
-                 ({article.reviews} reviews)
-              </Text>
-            </View>
-            <TouchableOpacity>
-              <Text style={styles.description}>
-                {article.description.split('').slice(0, 180)}...
-                {/* <Text style={{color: theme.colors.active}}> Read more</Text> */}
-              </Text>
-            </TouchableOpacity>
-            <View style={{margin: theme.sizes.margin/2, flexDirection : 'row', justifyContent: 'space-between' }}>
+                    styles.row,
+                    { alignItems: 'center', marginVertical: theme.sizes.margin / 2 }
+                  ]}>
+                    {this.renderRatings(article.rating)}
+                    <Text style={{ color: theme.colors.active }}>
+                      {article.rating} 
+                    </Text>
+                    <Text style={{ marginLeft: 8, color: theme.colors.caption }}>
+                      ({article.reviews} reviews)
+                    </Text>
+             </View>
+           
+            <Tabs 
+            
+            renderTabBar={()=> <ScrollableTab />}>
+                <Tab heading="Deskripsi">
+                  <Text style={styles.description}>
+                  {/* {article.description.split('').slice(0, 180)}... */}
+                  {article.description}
+                  {/* <Text style={{color: theme.colors.active}}> Read more</Text> */}
+                  </Text>
+                </Tab>
+                <Tab heading="Itinerary">
+                <Text style={styles.description}>
+                  {/* {article.description.split('').slice(0, 180)}... */}
+                  {article.itinerary}
+                  {/* <Text style={{color: theme.colors.active}}> Read more</Text> */}
+                  </Text>
+                </Tab>
+                <Tab heading="Pesan Paket">
+            <View style={{margin: theme.sizes.margin/2.5, flexDirection : 'row', justifyContent: 'space-between' }}>
               <Text style={[styles.description,{ color: theme.colors.black} ]}>
                 Paket 1 
               </Text>
-              <View style={{marginLeft: theme.sizes.margin/2}}>
+              <View style={{marginLeft: theme.sizes.margin/2.5}}>
                 <NumericInput  
                   type='plus-minus'
                   value={this.state.value}
@@ -248,7 +262,7 @@ class PaketHaji extends Component {
                   iconSize={theme.sizes.title}
                   onChange={value => this.setState({value})} /> 
               </View>
-              <Text style={[styles.description,{ marginLeft: theme.sizes.margin/2, color: theme.colors.black} ]}>
+              <Text style={[styles.description,{ marginLeft: theme.sizes.margin/2.5, color: theme.colors.black} ]}>
                 <NumberFormat value={this.state.value*21000000} displayType={'text'} thousandSeparator={true}  renderText={value => <Text>{value}</Text>} prefix={'Rp.'} />
               </Text>
             </View>
@@ -258,11 +272,11 @@ class PaketHaji extends Component {
               onPress={() => this.props.navigation.navigate('FormBookingHaji')}
               style={{marginTop: theme.sizes.margin/2}}
             />
-             <View style={{margin: theme.sizes.margin/2, flexDirection : 'row', justifyContent: 'space-between' }}>
+             <View style={{margin: theme.sizes.margin/2.5, flexDirection : 'row', justifyContent: 'space-between' }}>
               <Text style={[styles.description,{ color: theme.colors.black} ]}>
                 Paket 2 
               </Text>
-              <View style={{marginLeft: theme.sizes.margin/2}}>
+              <View style={{marginLeft: theme.sizes.margin/2.5}}>
                 <NumericInput  
                   type='plus-minus'
                   value2={this.state.value2}
@@ -272,7 +286,7 @@ class PaketHaji extends Component {
                   iconSize={theme.sizes.title}
                   onChange={value2 => this.setState({value2})} /> 
               </View>
-              <Text style={[styles.description,{ marginLeft: theme.sizes.margin/2, color: theme.colors.black} ]}>
+              <Text style={[styles.description,{ marginLeft: theme.sizes.margin/2.5, color: theme.colors.black} ]}>
               <NumberFormat value={this.state.value2*30000000} displayType={'text'} thousandSeparator={true}  renderText={value => <Text>{value}</Text>} prefix={'Rp.'} />
               </Text>
             </View>
@@ -290,6 +304,11 @@ class PaketHaji extends Component {
                 (Paket Kosong)
               </Text>
             </View>
+                </Tab>
+              </Tabs>
+            <TouchableOpacity>
+              
+            </TouchableOpacity>
           </View>
         </View>
       </View>
